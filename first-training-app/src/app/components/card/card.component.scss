@@ -16,6 +16,9 @@
       color: var(--card-color);
       border-radius: 5px;
     }
+    .card-details-header-close-button {
+      cursor: pointer;
+    }
   }
   .card-details-main {
     margin: 20px 0;
@@ -27,19 +30,22 @@
       font-size: 20px;
       margin: 0;
     }
-    .card-details-main-subtitle {
-      color: var(--button-primary-bg);
-      font-weight: 600;
-      font-size: 20px;
-    }
   }
   .card-details-canceled {
-    display: flex;
-    flex-direction: column;
     text-align: left;
-    width: 200px;
-    border-radius: 12px;
-    background-color: var(--card-color);
-    padding: 16px;
+  }
+  .card-details-main-title {
+    font-size: 20px;
+    margin: 0;
+  }
+  .card-details-main-canceled-title {
+    font-size: 20px;
+    margin: 8px 0 8px 0;
+  }
+  .card-details-main-canceled-subtitle {
+    margin: 0;
+    color: var(--button-primary-bg);
+    font-weight: 600;
+    font-size: 16px;
   }
 }

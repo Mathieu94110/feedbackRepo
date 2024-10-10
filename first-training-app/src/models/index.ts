@@ -1,5 +1,5 @@
 export enum Steps {
-  Start,
+  UnFollow,
   Cancel,
   Follow,
 }
