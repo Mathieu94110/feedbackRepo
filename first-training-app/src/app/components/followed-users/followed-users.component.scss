@@ -1,0 +1,23 @@
+.followed-users {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  .followed-users-content {
+    width: 80%;
+    border: 1px solid #000;
+    border-radius: var(--button-radius);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   ol > li {
+        color: #000;
+      }
+  }
+  &-title {
+    text-align: center;
+    padding: 20px 0;
+  }
+  &-empty{
+    text-align: center;
+  }
+}
+
+  
