@@ -1,22 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
-$main-background-color: green;
-$main-text-color: white;
-$main-font-size: 16px;
-$main-border-radius: 4px;
+:root {
+   --main-background-color: green;
+   --main-text-color: white;
+   --main-font-size: 16px;
+   --main-border-radius: 4px;
+   --card-color: #fff;
+   --card-color-time:#000;
+   --button-primary-bg:#7949FF;
+   --button-radius:8px;
+   --button-padding:12px;
+   --button-gap:4px;
+}
 
 @mixin button-style {
   padding: 8px 16px;
-  background-color: $main-background-color;
-  color: $main-text-color;
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
   border: none;
-  border-radius: $main-border-radius;
-  font-size: $main-font-size;
+  border-radius: var(--main-border-radius);
+  font-size: var(--main-font-size);
   cursor: pointer;
 }
 
 body {
   margin: 0;
   padding: 0;
+  background-color: rgb(233, 222, 231)
 }
 
 button {
@@ -31,9 +39,6 @@ ul {
 
 li {
   padding: 5px;
-  font-size: $main-font-size;
+  font-size: var(--main-font-size);
   color: gray;
-}
-.center{
-  text-align: center;
 }

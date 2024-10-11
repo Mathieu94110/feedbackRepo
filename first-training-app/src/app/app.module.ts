@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
-import { CardsListComponent } from './cards-list/cards-list.component';
-import { CardDetailsComponent } from './card-details/card-details.component';
+import { CardComponent } from './components/card/card.component';
+import { FormatDatePipe } from './pipe/date-pipe/date.pipe';
+import { ButtonComponent } from './common/followButton/follow-button.component';
 
 @NgModule({
-  declarations: [AppComponent, CardsListComponent, CardDetailsComponent],
+  declarations: [AppComponent, CardComponent, FormatDatePipe, ButtonComponent],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],
