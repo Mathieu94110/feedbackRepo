@@ -1,0 +1,13 @@
+<div class="followed-users">
+    <div class="followed-users-content">
+        <h2 class="followed-users-title">Utilisateurs suivis</h2>
+        <ol *ngIf="followedUsers.length > 0;else followedUsersEmpty">
+            <li *ngFor="let user of followedUsers">
+                <span>{{user.firstName}}</span>    <span>{{user.lastName}}</span>
+            </li>
+        </ol>
+        <ng-template #followedUsersEmpty>
+        <p class="followed-users-empty">Vous ne suivez actuellement aucun utilisateur !</p>
+        </ng-template>
+    </div>
+</div>
