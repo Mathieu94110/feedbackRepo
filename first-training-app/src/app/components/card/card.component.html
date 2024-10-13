@@ -13,10 +13,10 @@
         width="64px"
         height="64px"
       />
-      <h1 class="card-main-title">
+      <h2 class="card-main-title">
         {{ getFullName(user.firstName, user.lastName) }}
-      </h1>
-      <img src="../../assets/icons/@whitefish664.png" />
+      </h2>
+      <h3 class="card-main-subtitle">&#x40;{{ index + 1 }}</h3>
     </div>
     <ns-follow-button
       [index]="index"
