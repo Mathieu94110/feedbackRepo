@@ -10,7 +10,7 @@ export class ButtonComponent {
   @Input() indexOfFollowedUsers!: number[];
   @Output() switchUserFollowed = new EventEmitter();
 
-  switchUserFollow() {
+  onClick() {
     this.switchUserFollowed.emit();
   }
 }
