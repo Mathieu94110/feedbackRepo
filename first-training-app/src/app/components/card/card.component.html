@@ -1,41 +1,41 @@
 <div>
-<!--   <div class="card" *ngIf="currentStep !== 'Cancel'; else canceled">
+  <div class="card" *ngIf="currentStep !== 'Cancel'; else canceled">
     <div class="card-header">
       <div class="card-header-time">{{ date | formatdate }}</div>
-      <img
-        src="../../assets/icons/close.png"
-        width="20px"
-        height="20px"
-        alt="close"
-        class="card-header-close-button"
-        (click)="toggleOpen()"
-      />
+      <button (click)="toggleOpen()" class="card-header-close-button">
+        <span class="card-header-close-button-text">x</span>
+      </button>
     </div>
     <div class="card-main">
       <img
-        src="../../assets/images/avatar.png"
+        [src]="user.image"
+        [alt]="getFullName(user.firstName, user.lastName)"
         width="64px"
         height="64px"
-        alt="Jerome Bell"
       />
-      <h1 class="card-main-title">Jerome Bell</h1>
+      <h1 class="card-main-title">
+        {{ getFullName(user.firstName, user.lastName) }}
+      </h1>
       <img src="../../assets/icons/@whitefish664.png" />
     </div>
     <ns-follow-button
-      (changeBtnVal)="changeBtnVal($event)"
-      [value]="btnText"
+      [index]="index"
+      [indexOfFollowedUsers]="indexOfFollowedUsers"
+      (switchUserFollowed)="this.switchUserFollowed.emit({user,index})"
     ></ns-follow-button>
   </div>
   <ng-template #canceled>
     <div class="card card-canceled">
       <img
-        src="../../assets/images/avatar.png"
+        [src]="user.image"
+        [alt]="getFullName(user.firstName, user.lastName)"
         width="48px"
         height="48px"
-        alt="Jerome Bell"
       />
-      <h1 class="card-main-canceled-title">Jerome Bell</h1>
+      <h1 class="card-main-canceled-title">
+        {{ getFullName(user.firstName, user.lastName) }}
+      </h1>
       <h2 class="card-main-canceled-subtitle">Creator</h2>
     </div>
-  </ng-template> -->
+  </ng-template>
 </div>
