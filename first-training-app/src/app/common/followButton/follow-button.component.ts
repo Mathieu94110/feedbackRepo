@@ -1,4 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'ns-follow-button',
@@ -6,10 +11,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./follow-button.component.scss'],
 })
 export class ButtonComponent {
-  @Input() value!: string;
-  @Output() changeBtnVal = new EventEmitter<string>();
+  @Input() index!: number;
+  @Input() indexOfFollowedUsers!: number[];
+  @Output() switchUserFollowed = new EventEmitter();
 
-  switchValue() {
-    this.changeBtnVal.emit(this.value === 'Follow' ? 'Unfollow' : 'Follow');
+  switchUserFollow() {
+    this.switchUserFollowed.emit();
   }
 }

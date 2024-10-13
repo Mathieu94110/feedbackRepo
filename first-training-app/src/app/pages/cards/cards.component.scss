@@ -1,10 +1,10 @@
 .cards {
   display: flex;
+  align-items: center;
   &-left-side {
     width: 50%;
   }
   &-right-side {
-    background-color: yellow;
     width: 50%;
   }
 }
