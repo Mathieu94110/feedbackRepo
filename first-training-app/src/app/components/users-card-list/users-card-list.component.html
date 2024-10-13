@@ -2,16 +2,13 @@
   <div *ngIf="error">
     {{ errorMsg }}
   </div>
-  <div *ngIf="users.length">
-    <ul>
-      <li *ngFor="let user of users; index as i">
-        {{ user.firstName }} - {{ user.lastName }}
-        <ns-follow-button
-          [index]="i"
-          [indexOfFollowedUsers]="indexOfFollowedUsers"
-          (switchUserFollowed)="this.switchUserFollowed.emit({user,i})"
-        ></ns-follow-button>
-      </li>
-    </ul>
-  </div>
+  <ul *ngIf="users.length" class="users-card-list-content">
+    <ns-card
+      *ngFor="let user of users; index as i"
+      [index]="i"
+      [user]="user"
+      [indexOfFollowedUsers]="indexOfFollowedUsers"
+      (switchUserFollowed)="this.switchUserFollowed.emit({user,i})"
+    ></ns-card>
+  </ul>
 </div>
