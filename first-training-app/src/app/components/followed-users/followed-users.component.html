@@ -6,8 +6,7 @@
         class="followed-users-content-link"
         *ngFor="let user of followedUsers; index as i"
       >
-        <span>{{ user.firstName + " " }}</span
-        ><span>{{ user.lastName }}</span>
+        <span>{{ user.firstName }}&nbsp;</span><span>{{ user.lastName }}</span>
       </li>
     </ol>
     <ng-template #followedUsersEmpty>

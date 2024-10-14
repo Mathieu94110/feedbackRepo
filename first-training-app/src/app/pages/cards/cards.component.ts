@@ -12,16 +12,16 @@ export class CardsComponent {
   followedUsers: IUserInfo[] = [];
   indexOfFollowedUsers: number[] = [];
 
-  switchUserFollow(event: { user: IUserInfo; i: number }) {
-    const { user, i } = event;
+  switchUserFollow(event: { user: IUserInfo }) {
+    const { user } = event;
     const isUserFollowed = this.followedUsers.indexOf(user) !== -1;
     if (isUserFollowed) {
       this.followedUsers = this.followedUsers.filter((u) => u.id != user.id);
-      const indexOfFollowedUser = this.indexOfFollowedUsers.indexOf(i);
+      const indexOfFollowedUser = this.indexOfFollowedUsers.indexOf(user.id);
       this.indexOfFollowedUsers.splice(indexOfFollowedUser, 1);
     } else {
       this.followedUsers = [...this.followedUsers, user];
-      this.indexOfFollowedUsers = [...this.indexOfFollowedUsers, i];
+      this.indexOfFollowedUsers = [...this.indexOfFollowedUsers, user.id];
     }
   }
 }
