@@ -26,7 +26,6 @@ export class UsersCardListComponent {
   @Input() indexOfFollowedUsers!: number[];
   @Output() switchUserFollowed = new EventEmitter<{
     user: IUserInfo;
-    i: number;
   }>();
 
   users: IUserInfo[] = [];

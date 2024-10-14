@@ -12,7 +12,6 @@ export class CardComponent {
   @Input() indexOfFollowedUsers!: number[];
   @Output() switchUserFollowed = new EventEmitter<{
     user: IUserInfo;
-    index: number;
   }>();
 
   date = new Date();
@@ -26,7 +25,7 @@ export class CardComponent {
     this.btnText = value;
   }
   getFullName(firstname: string, lastname: string) {
-    return firstname + ' ' + lastname;
+    return `${firstname} ${lastname}`;
   }
   switchUserFollow() {
     this.switchUserFollowed.emit();

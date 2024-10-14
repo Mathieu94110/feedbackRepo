@@ -16,12 +16,12 @@
       <h2 class="card-main-title">
         {{ getFullName(user.firstName, user.lastName) }}
       </h2>
-      <h3 class="card-main-subtitle">&#x40;{{ index + 1 }}</h3>
+      <h3 class="card-main-subtitle">&#x40;{{ user.id }}</h3>
     </div>
     <ns-follow-button
-      [index]="index"
+      [index]="user.id"
       [indexOfFollowedUsers]="indexOfFollowedUsers"
-      (switchUserFollowed)="this.switchUserFollowed.emit({user,index})"
+      (switchUserFollowed)="this.switchUserFollowed.emit({user})"
     ></ns-follow-button>
   </div>
   <ng-template #canceled>
