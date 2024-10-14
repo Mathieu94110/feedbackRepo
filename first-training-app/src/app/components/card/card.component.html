@@ -1,0 +1,41 @@
+<div>
+  <div class="card" *ngIf="currentStep !== 'Cancel'; else canceled">
+    <div class="card-header">
+      <div class="card-header-time">{{ date | formatdate }}</div>
+      <button (click)="toggleOpen()" class="card-header-close-button">
+        <span class="card-header-close-button-text">x</span>
+      </button>
+    </div>
+    <div class="card-main">
+      <img
+        [src]="user.image"
+        [alt]="getFullName(user.firstName, user.lastName)"
+        width="64px"
+        height="64px"
+      />
+      <h2 class="card-main-title">
+        {{ getFullName(user.firstName, user.lastName) }}
+      </h2>
+      <h3 class="card-main-subtitle">&#x40;{{ user.id }}</h3>
+    </div>
+    <ns-follow-button
+      [index]="user.id"
+      [indexOfFollowedUsers]="indexOfFollowedUsers"
+      (switchUserFollowed)="this.switchUserFollowed.emit({user})"
+    ></ns-follow-button>
+  </div>
+  <ng-template #canceled>
+    <div class="card card-canceled">
+      <img
+        [src]="user.image"
+        [alt]="getFullName(user.firstName, user.lastName)"
+        width="48px"
+        height="48px"
+      />
+      <h1 class="card-main-canceled-title">
+        {{ getFullName(user.firstName, user.lastName) }}
+      </h1>
+      <h2 class="card-main-canceled-subtitle">Creator</h2>
+    </div>
+  </ng-template>
+</div>

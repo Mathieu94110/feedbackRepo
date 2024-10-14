@@ -1,0 +1,8 @@
+.users-card-list {
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    gap: 10px;
+  }
+}

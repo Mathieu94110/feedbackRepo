@@ -1,0 +1,11 @@
+<div class="cards">
+  <div class="cards-left-side">
+    <ns-followed-users [followedUsers]="followedUsers"></ns-followed-users>
+  </div>
+  <div class="cards-right-side">
+    <ns-users-card-list
+      [indexOfFollowedUsers]="indexOfFollowedUsers"
+      (switchUserFollowed)="switchUserFollow($event)"
+    ></ns-users-card-list>
+  </div>
+</div>
